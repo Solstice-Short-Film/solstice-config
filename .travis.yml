@@ -1,15 +1,22 @@
 language: python
+before_install:
+  - pip install pycodestyle
 install:
-- pip install -r requirements.txt
-- python setup.py install
+  - pip install -r requirements.txt
+  - python setup.py install
 script:
-- pytest
+  # Run pep8 on all .py files in all sub-folders
+  # (ignore "E402: module level import not at top of file" because of use case sys.path.append('..'); import <module>)
+  - find . -name \*.py -exec pycodestyle --ignore=E402 {} +
+  - pytest --cov=artellapipe
+after_success:
+  - coveralls
 deploy:
   skip_cleanup: true
   provider: pypi
   user: tpoveda
   password:
-    secure: UdCCZe5JR61o0q55568Bw9jBUskpzW8ngbrzf9/40m6FGF1aj7xkavl0RRCDvRb/+lyFl51Fv9cXjURssgnGrqRjL6izC7uvSnMc9KaLpu1UA1s3JTL5KkObLnG2vqLERJUIa1bMI+nIMXG3aVWHCit/126yC476aw8AFabPwBm44VjSaQiRkOau8Eb2FbbSCo6ugKjR7GmTaPuBbWj4Sld9CJwQeriMaytK9NTLE4J4qYXUIf1iEYwHjUUVVFkwnIOvEpDWtzpk211YTZRnfVsbaYNyRGAb0rPwajUyitb8XV06EPPO0qnjzJQe9QmK+dBxrxTTxeHTlnVfx4oQkl9wlHhSYe5jBd0pZJVSg+bvUZiYP5FYAdVhoJKdFDNciVUJ8RWOBp7cx7EJKVYvPEvK9efj4YStRH0H2nDKFhQq12H2q8dSEtwsq+K8Uzm8V++Dz1gYCi3St4/BOZyVXZqcuwoBSJ8s5twVpRhlaBWVGhxFUsEWhlU8t4mhyFyJY4/BXJe+2lJb/LunWoifHO2e27TlbQ+zzX5KkKIaVFVrxJDblpNFu1XRoX8kc7ae/G8v/M4d8RWOLXAgcfCxHPnB8bCsAdRdMGO3V2HkeRqCgrST42QzBNSIN41GY3oBOwnhGwiTVds5EGbLQey15jTeqAuCeerWexmDdGy9icQ=
+    secure: enLp5ge/78spOHve6riqD0NCsLzUO4IHnrmG2jIdn9DFbNuGBsrOyLcBIP9ZXxDPKJaAPYTEPkGDcG3nIuKX/fW4Fexyz88SjCB3bxPHEcOsdjbD7XhHX72FdeHNUeO7P2W+KWxruEiwfsg960lewOsrX08za2a9zgbn1w70yyN35cuOFU2Sc/HEySl1QqaWpQTMGuUvyPzMMc29br7Yn3ufl6FKTuoefu58K+EhJa3+9hLOJBKq5Ku0TaGigAXZ3eWQcAoh3IFWG9ik89USBIpXYv3hkiMPu98y6WXFB2xD5NhujbpQ/yg/tQOq8Q26Q0/uWAzGjfMaI+EC2DChMq5+d1Ryc/mnfUqEjp9Oju8AfYUaUQ9inTnOr6RuTwOfaSEvCgwpCB8xFwaEFsmr6BxC91/nPrtabRG3VrlV2OhGg/8Qhfqpu2BN1aCJrnBKZ1Y+cuotMadi+oTap9N21rFtetAWle1YRDG7hN5tMVtvO2nVAHfibMICLezzDr2ej5igX3PcT4784XYn5A1OyKTFoP7U5JKnIW9HPaZwiAgy5xzuWwVbhjf6QXyLblYJlKV6s3bsHm794OVk+g3xHHZKz4sp+bTnrcM7ETsPxM0bkTYa9BwloK0Gtmj7z/kfb5wqHDJ0HvDwi64NgBx8Vjvu2WOItGt1sd7nuJCOQQI=
   on:
     branch: master
     tags: true
