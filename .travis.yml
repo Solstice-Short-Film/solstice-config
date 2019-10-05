@@ -5,8 +5,6 @@ install:
   - pip install -r requirements.txt
   - python setup.py install
 script:
-  # Run pep8 on all .py files in all sub-folders
-  # (ignore "E402: module level import not at top of file" because of use case sys.path.append('..'); import <module>)
   - find . -name \*.py -exec pycodestyle --ignore=E402 {} +
   - pytest --cov=solstice
 after_success:
@@ -16,7 +14,7 @@ deploy:
   provider: pypi
   user: tpoveda
   password:
-    secure: enLp5ge/78spOHve6riqD0NCsLzUO4IHnrmG2jIdn9DFbNuGBsrOyLcBIP9ZXxDPKJaAPYTEPkGDcG3nIuKX/fW4Fexyz88SjCB3bxPHEcOsdjbD7XhHX72FdeHNUeO7P2W+KWxruEiwfsg960lewOsrX08za2a9zgbn1w70yyN35cuOFU2Sc/HEySl1QqaWpQTMGuUvyPzMMc29br7Yn3ufl6FKTuoefu58K+EhJa3+9hLOJBKq5Ku0TaGigAXZ3eWQcAoh3IFWG9ik89USBIpXYv3hkiMPu98y6WXFB2xD5NhujbpQ/yg/tQOq8Q26Q0/uWAzGjfMaI+EC2DChMq5+d1Ryc/mnfUqEjp9Oju8AfYUaUQ9inTnOr6RuTwOfaSEvCgwpCB8xFwaEFsmr6BxC91/nPrtabRG3VrlV2OhGg/8Qhfqpu2BN1aCJrnBKZ1Y+cuotMadi+oTap9N21rFtetAWle1YRDG7hN5tMVtvO2nVAHfibMICLezzDr2ej5igX3PcT4784XYn5A1OyKTFoP7U5JKnIW9HPaZwiAgy5xzuWwVbhjf6QXyLblYJlKV6s3bsHm794OVk+g3xHHZKz4sp+bTnrcM7ETsPxM0bkTYa9BwloK0Gtmj7z/kfb5wqHDJ0HvDwi64NgBx8Vjvu2WOItGt1sd7nuJCOQQI=
+    secure: RXW48clv+EQ+GdK9Vg+yIht1MFOj7qJrH4l7dtLHjf1ocgJjU/erBWXnGKuj3jyM5GRwuN611qPEIcAnQL4q8JDEJl0GuY0BjeHNaBdBKlCOx9lAQ+4912H7qojPhewyCEFOhe7ELJV54ytq5K0PX5U2HVcbevWxXueUX2EGKAZSiOxVB99EWlZ29u9MRzjfsik2Ktez2U8H1+UTR22e1s1t49x93334eKvWUQNxTvtYZa71bl4UxTl6AiLsm5y/T0ZTylj3QqOFFig+JR5z0or8EcWvz6xXB1nRiineRdssliXYRsH/ru8F250Ch+DBXxUxN8l6fBaxpZ0usNEGvPNuc1vbiM7In2xYH16oCNjbPE4SfP2BJnMGJ6oMMBwvH6f3EwvcwnDedrdo5pkpgBHQRRXNWqxlWu1NXhNwmFeAhCZOZUL88DyWq9b5QZW1BE96qrXBTdt6WBHyNjfsTcZ1dY5l/i3+vjsxgx1p502WvMPsu9FQW0A75HZQnbItxgeTWME19FmpybYXMYqbzwM138OFkGLXI1weVOe4XLaT72tv0bIWa+byI1aM696TkYuxEggGr0Z3v+LI997MtDi725+kbhe/O6icqgtEuV+Jds0QuKxQjHphFFCr5ejgeskjmhR6X2MVkb7/eLB1ZpCnAC+1s/UfHS4+hJpSCEA=
   on:
     branch: master
     tags: true
