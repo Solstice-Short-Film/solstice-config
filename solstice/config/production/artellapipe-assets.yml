@@ -76,6 +76,8 @@ reference_extension_functions:
   abc:
     reference_function: reference_alembic_file
     file_type: alembic
+    reference_function_extra_params:
+      model_type: model
   ass:
     reference_function: reference_standin_file
     file_type: standin
