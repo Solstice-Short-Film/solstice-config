@@ -68,7 +68,7 @@ tools:
   - artellauploader
   - assetsmanager
   - shadersmanager
-  #  - lightrigsmanager
+  - lightrigsmanager
   - assetslibrary
   - namemanager
 #  - outliner
