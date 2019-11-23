@@ -35,10 +35,6 @@ departments:
 #      - Cloth
 #      - Groom
 
-# Define configuration variables for project playblast
-playblast:
-  presets_url: "Assets/Scripts/PIPELINE/__working__/PlayblastPresets"
-
 # Define configuration variables for project shots
 shot:
   regex: "(\\A[^_]+_\\d{2,2}_\\d{2,3})"
@@ -71,6 +67,7 @@ tools:
   - lightrigsmanager
   - assetslibrary
   - namemanager
+  - playblastmanager
 #  - outliner
 #  - toolbox
   - tagger
