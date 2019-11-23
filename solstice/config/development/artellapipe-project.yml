@@ -68,6 +68,7 @@ tools:
   - assetslibrary
   - namemanager
   - playblastmanager
+  - snowgenerator
 #  - outliner
 #  - toolbox
   - tagger
