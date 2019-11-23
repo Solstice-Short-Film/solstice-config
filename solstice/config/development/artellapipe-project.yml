@@ -22,18 +22,6 @@ departments:
   - Rigging
   - Layout
 
-#  tag_types:
-#    - Scene
-#    - Prop
-#    - Character
-#    - Background Element
-#    - Light Rig
-#    - Model
-#    - Animation
-#    - Shading
-#    - Cloth
-#    - Groom
-#    - Camera
 #  outliner_categories:
 #    "Props":
 #      - Prop
@@ -46,10 +34,6 @@ departments:
 #    "FX":
 #      - Cloth
 #      - Groom
-
-# Define configuration variables for project shaders
-shaders:
-  extension: ".sshader"
 
 # Define configuration variables for project playblast
 playblast:
@@ -83,9 +67,11 @@ tools:
   - artellamanager
   - artellauploader
   - assetsmanager
+  - shadersmanager
+  #  - lightrigsmanager
   - assetslibrary
-#  - lightrigsmanager
   - namemanager
 #  - outliner
 #  - toolbox
+  - tagger
   - xgenmanager

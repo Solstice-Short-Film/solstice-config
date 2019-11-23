@@ -1,5 +1,6 @@
 # Base Configuration for Artella Assets for Solstice
 
+# Defines dictionary of asset types (Props, Characters, etc) used by the project
 types:
   Props:
     class: solstice.assets.prop.SolsticeProp
@@ -24,6 +25,7 @@ types:
       - rig
       - groom
 
+# Defines dictionary of file types (textures, model, etc) used by the project
 files:
   textures:
     class: solstice.files.texture.SolsticeTextureAssetFile
@@ -57,18 +59,21 @@ files:
     extensions:
       - ass
 
+# Defines list of files that must be available to consider an asset published
 must_files:
   - textures
   - model
   - shading
   - rig
 
+# Defines list of paths that should be ignored during asset searching
 ignored_paths:
   - "PIPELINE"
   - "lighting"
   - "Light Rigs"
   - "S_CH_02_summer_scripts"
 
+# Defines dictionary that maps extension with reference functions and file types
 reference_extension_functions:
   ma:
     reference_function: reference_rig_file
