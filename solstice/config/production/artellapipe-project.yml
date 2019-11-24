@@ -54,6 +54,7 @@ libs:
   - artella
   - naming
   - drive
+  - pyblish
 
 tools:
   - welcome
@@ -69,6 +70,7 @@ tools:
   - namemanager
   - playblastmanager
   - snowgenerator
+  - modelchecker
 #  - outliner
 #  - toolbox
   - tagger
