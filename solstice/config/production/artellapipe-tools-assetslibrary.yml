@@ -8,8 +8,9 @@ url: https://solstice-short-film.github.io/solstice-docs/pipeline/pipeline/tools
 
 supported_files:
   "Rig":
-    ma
-#  "Alembic":
-#    abc
-#  "Standin":
-#    ass
+    rig:
+      ma: reference
+
+  "Alembic":
+    gpualembic:
+      abc: import
