@@ -71,7 +71,8 @@ tools:
   - namemanager
   - playblastmanager
   - snowgenerator
-  - modelchecker
+#  - modelchecker
+  - assetspublisher
 #  - outliner
 #  - toolbox
   - tagger
