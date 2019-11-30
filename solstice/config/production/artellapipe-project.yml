@@ -55,6 +55,7 @@ libs:
   - naming
   - drive
   - pyblish
+  - alembic
 
 tools:
   - welcome
