@@ -16,6 +16,13 @@ rules:
   expression: '{asset_name}_{asset_file_type}'
   iterator_format: '@'
   name: asset_file
+- _Serializable_classname: Rule
+  _Serializable_version: '1.0'
+  auto_fix: false
+  description: Defines the name of a light rig
+  expression: '{light_rig_prefix}_{description}'
+  iterator_format: '@'
+  name: lightrig
 template_tokens:
 - _Serializable_classname: TemplateToken
   _Serializable_version: '1.0'
@@ -57,11 +64,15 @@ template_tokens:
   _Serializable_version: '1.0'
   description: Path where asset is located.
   name: asset_path
+- _Serializable_classname: TemplateToken
+  _Serializable_version: '1.0'
+  description: Name of the light rig
+  name: light_rig_name
 templates:
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: asset_path
-  pattern: '{project_path}Assets/{asset_type}/{asset_name}'
+  pattern: '{@assets_path}/{asset_type}/{asset_name}'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: rig
@@ -82,6 +93,26 @@ templates:
   _Serializable_version: '1.0'
   name: groom
   pattern: '{asset_path}/{version_folder}/groom'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: assets_path
+  pattern: '{project_path}Assets'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: lightrig
+  pattern: '{@lightrigs}/{light_rig_name}'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: lightrigs
+  pattern: '{@assets_path}/lighting/Light Rigs/__working__/'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: alembic
+  pattern: '{asset_path}/{version_folder}/model/{asset_name}.{file_extension}'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: gpualembic
+  pattern: '{asset_path}/{version_folder}/model/{asset_name}.{file_extension}'
 tokens:
 - _Serializable_classname: Token
   _Serializable_version: '1.0'
@@ -185,3 +216,14 @@ tokens:
   values:
     key: []
     value: []
+- _Serializable_classname: Token
+  _Serializable_version: '1.0'
+  default: -1
+  description: Prefix used by light rigs in Solstice
+  name: light_rig_prefix
+  override_value: ''
+  values:
+    key:
+    - LR
+    value:
+    - LR
