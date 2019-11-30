@@ -4,3 +4,4 @@ version: 0.0.1
 name: "Solstice"
 plugins:
   - artellapipe.launcher.plugins.dccselector
+  - artellapipe.launcher.plugins.artellamanager
