@@ -4,5 +4,5 @@
 paths:
   - "Scripts/PIPELINE/__working__/ShadersLibrary"
 
-# Defines the extension used to store shaders in disk
-extension: ".sshader"
+# Defines the file used in Solstice to define shaders
+file_type: "shader"

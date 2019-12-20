@@ -5,8 +5,9 @@ pyblish_modules:
 
 plugins:
   # Validators
-  ValidateHardEdges:
+  ValidateStudentLicense:
     hosts: ['maya']
-    families: ['model']
     must_pass: True
-
+  CollectComment:
+    hosts: ['maya']
+    must_pass: True

@@ -8,6 +8,8 @@ types:
       - textures
       - model
       - shading
+      - shaders
+      - shadersmapping
       - rig
       - alembic
       - gpualembic
@@ -17,6 +19,8 @@ types:
       - textures
       - model
       - shading
+      - shaders
+      - shadersmapping
       - rig
       - alembic
       - gpualembic
@@ -26,6 +30,8 @@ types:
       - textures
       - model
       - shading
+      - shaders
+      - shadersmapping
       - rig
       - groom
       - alembic
@@ -36,6 +42,8 @@ must_files:
   - textures
   - model
   - shading
+  - shaders
+  - shadersmapping
   - rig
 
 # Defines list of paths that should be ignored during asset searching

@@ -61,7 +61,7 @@ tools:
   - welcome
   - changelog
   - bugtracker
-#  - alembicmanager
+  - alembicmanager
   - artellamanager
   - artellauploader
   - assetsmanager
@@ -71,9 +71,10 @@ tools:
   - namemanager
   - playblastmanager
   - snowgenerator
-#  - modelchecker
+  - modelchecker
   - assetspublisher
 #  - outliner
 #  - toolbox
   - tagger
+  - dependenciesmanager
   - xgenmanager

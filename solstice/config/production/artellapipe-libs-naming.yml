@@ -68,6 +68,14 @@ template_tokens:
   _Serializable_version: '1.0'
   description: Name of the light rig
   name: light_rig_name
+- _Serializable_classname: TemplateToken
+  _Serializable_version: '1.0'
+  description: Name of the shader
+  name: shader_name
+- _Serializable_classname: TemplateToken
+  _Serializable_version: '1.0'
+  description: Path where shaders are located
+  name: shaders_path
 templates:
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
@@ -113,6 +121,18 @@ templates:
   _Serializable_version: '1.0'
   name: gpualembic
   pattern: '{asset_path}/{version_folder}/model/{asset_name}.{file_extension}'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: shadersmapping
+  pattern: '{asset_path}/{version_folder}/shading/{asset_name}_SHD.{file_extension}'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: shader
+  pattern: '{shaders_path}/{shader_name}'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: shaders
+  pattern: '{asset_path}/{version_folder}/shaders'
 tokens:
 - _Serializable_classname: Token
   _Serializable_version: '1.0'
