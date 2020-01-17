@@ -68,3 +68,9 @@ files:
     template: shader
     extensions:
       - sshader
+  master:
+    name: Master Layout
+    class: solstice.files.masterlayout.SolsticeMasterLayoutSequenceFile
+    template: master_layout
+    extensions:
+      - ma

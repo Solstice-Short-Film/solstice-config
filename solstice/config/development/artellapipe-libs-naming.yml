@@ -46,10 +46,6 @@ template_tokens:
   name: asset_name
 - _Serializable_classname: TemplateToken
   _Serializable_version: '1.0'
-  description: Name of the sequence. This name must be unique.
-  name: sequence_name
-- _Serializable_classname: TemplateToken
-  _Serializable_version: '1.0'
   description: Version folder of the file.
   name: version_folder
 - _Serializable_classname: TemplateToken
@@ -62,10 +58,6 @@ template_tokens:
   name: folder_type
 - _Serializable_classname: TemplateToken
   _Serializable_version: '1.0'
-  description: Path where asset is located.
-  name: asset_path
-- _Serializable_classname: TemplateToken
-  _Serializable_version: '1.0'
   description: Name of the light rig
   name: light_rig_name
 - _Serializable_classname: TemplateToken
@@ -74,8 +66,8 @@ template_tokens:
   name: shader_name
 - _Serializable_classname: TemplateToken
   _Serializable_version: '1.0'
-  description: Path where shaders are located
-  name: shaders_path
+  description: Name of the sequence. This must be unique
+  name: sequence_name
 templates:
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
@@ -84,27 +76,27 @@ templates:
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: rig
-  pattern: '{asset_path}/{version_folder}/rig/{asset_name}_RIG.{file_extension}'
+  pattern: '{@asset_path}/{version_folder}/rig/{asset_name}_RIG.{file_extension}'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: model
-  pattern: '{asset_path}/{version_folder}/model/{asset_name}.{file_extension}'
+  pattern: '{@asset_path}/{version_folder}/model/{asset_name}.{file_extension}'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: shading
-  pattern: '{asset_path}/{version_folder}/shading/{asset_name}_SHD.{file_extension}'
+  pattern: '{@asset_path}/{version_folder}/shading/{asset_name}_SHD.{file_extension}'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: textures
-  pattern: '{asset_path}/{version_folder}/textures'
+  pattern: '{@asset_path}/{version_folder}/textures'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: groom
-  pattern: '{asset_path}/{version_folder}/groom'
+  pattern: '{@asset_path}/{version_folder}/groom'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: assets_path
-  pattern: '{project_path}Assets'
+  pattern: '{project_path}/Assets'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: lightrig
@@ -116,23 +108,35 @@ templates:
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: alembic
-  pattern: '{asset_path}/{version_folder}/model/{asset_name}.{file_extension}'
+  pattern: '{@asset_path}/{version_folder}/model/{asset_name}.{file_extension}'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: gpualembic
-  pattern: '{asset_path}/{version_folder}/model/{asset_name}.{file_extension}'
+  pattern: '{@asset_path}/{version_folder}/model/{asset_name}.{file_extension}'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: shadersmapping
-  pattern: '{asset_path}/{version_folder}/shading/{asset_name}_SHD.{file_extension}'
+  pattern: '{@asset_path}/{version_folder}/shading/{asset_name}_SHD.{file_extension}'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: shader
-  pattern: '{shaders_path}/{shader_name}'
+  pattern: '{@shaders}/{shader_name}.{file_extension}'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: shaders
-  pattern: '{asset_path}/{version_folder}/shaders'
+  pattern: '{@asset_path}/{version_folder}/shaders'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: production_path
+  pattern: '{project_path}/Production'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: master_layout
+  pattern: '{@production_path}/{sequence_name}/_master_layout/{version_folder}/seq_layout/_seq_master_layout.{file_extension}'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: sequence_path
+  pattern: '{@production_path}/{sequence_name}'
 tokens:
 - _Serializable_classname: Token
   _Serializable_version: '1.0'

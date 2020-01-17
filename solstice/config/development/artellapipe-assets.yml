@@ -36,6 +36,10 @@ types:
       - groom
       - alembic
       - gpualembic
+  Sets:
+    class: solstice.assets.set.SolsticeSet
+    files:
+      - model
 
 # Defines list of files that must be available to consider an asset published
 must_files:

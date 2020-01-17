@@ -23,17 +23,7 @@ departments:
   - Layout
 
 #  outliner_categories:
-#    "Props":
-#      - Prop
-#    "Characters":
-#      - Character
-#    "Cameras":
-#      - Camera
-#    "Lights":
-#      - Light Rig
-#    "FX":
-#      - Cloth
-#      - Groom
+
 
 # Define configuration variables for project shots
 shot:
@@ -53,7 +43,7 @@ progress_bar:
 libs:
   - artella
   - naming
-  - drive
+  - kitsu
   - pyblish
   - alembic
 
@@ -73,7 +63,7 @@ tools:
   - snowgenerator
   - modelchecker
   - assetspublisher
-#  - outliner
+  - outliner
 #  - toolbox
   - tagger
   - dependenciesmanager

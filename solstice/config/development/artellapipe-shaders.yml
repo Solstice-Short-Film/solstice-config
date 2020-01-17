@@ -4,5 +4,8 @@
 paths:
   - "Scripts/PIPELINE/__working__/ShadersLibrary"
 
-# Defines the file used in Solstice to define shaders
+# Defines the file type used in Solstice to define shaders
 file_type: "shader"
+
+# Defines the file used in Solstice to define shaders
+shader_path_file_type: "shaders"
