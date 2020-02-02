@@ -68,6 +68,10 @@ template_tokens:
   _Serializable_version: '1.0'
   description: Name of the sequence. This must be unique
   name: sequence_name
+- _Serializable_classname: TemplateToken
+  _Serializable_version: '1.0'
+  description: Name of the shot. This must be unique
+  name: shot_name
 templates:
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
@@ -116,7 +120,7 @@ templates:
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: shadersmapping
-  pattern: '{@asset_path}/{version_folder}/shading/{asset_name}_SHD.{file_extension}'
+  pattern: '{@shaders}/{asset_name}_MAP.{file_extension}'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: shader
@@ -137,6 +141,18 @@ templates:
   _Serializable_version: '1.0'
   name: sequence_path
   pattern: '{@production_path}/{sequence_name}'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: standin
+  pattern: '{@asset_path}/{version_folder}/model/{asset_name}.{file_extension}'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: shot_layout
+  pattern: '{@production_path}/{sequence_name}/{shot_name}/{version_folder}/rough/{shot_name}_ROUGH.{file_extension}'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: shot_layout_anim
+  pattern: '{@production_path}/{sequence_name}/{shot_name}/{version_folder}/rough/{shot_name}_ANIM.{file_extension}'
 tokens:
 - _Serializable_classname: Token
   _Serializable_version: '1.0'
