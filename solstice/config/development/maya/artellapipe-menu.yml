@@ -17,7 +17,7 @@ menus:
                 is_checked: False
                 load_on_startup: False
             - id: solstice-commands-cleanstudentlicense
-              command: "from tpMayaLib.core import helpers; helpers.clean_student_line()"
+              command: "from tpDcc.dccs.maya.core import helpers; helpers.clean_student_line()"
               type: command
               language: python
               tags: ['solstice', 'maya', 'clean', 'student', 'license']
@@ -28,7 +28,7 @@ menus:
                 is_checked: False
                 load_on_startup: False
             - id: solstice-clean-scene
-              command: "from tpMayaLib.core import scene; scene.clean_scene()"
+              command: "from tpDcc.dccs.maya.core import scene; scene.clean_scene()"
               type: command
               language: python
               tags: ['solstice', 'clean', 'scene']
@@ -79,6 +79,20 @@ menus:
               ui:
                 label: "Upload File"
                 icon: 'upload_wip'
+                is_checkable: False
+                is_checked: False
+                load_on_startup: False
+      - label: Layout
+        type: menu
+        children:
+            - id: solstice-commands-camerasequencer
+              command: "from tpDcc.dccs.maya.core import sequencer; sequencer.open_camera_sequencer_window()"
+              type: command
+              language: python
+              tags: ['solstice', 'camera', 'sequencer']
+              ui:
+                label: "Camera Sequencer"
+                icon: 'sequencer'
                 is_checkable: False
                 is_checked: False
                 load_on_startup: False

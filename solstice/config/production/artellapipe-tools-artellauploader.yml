@@ -4,4 +4,7 @@
 icon: artellauploader
 
 # URL to tool documentation web page
-url: https://solstice-short-film.github.io/solstice-docs/pipeline/pipeline/tools/artellauploader/
+help_url: https://solstice-short-film.github.io/solstice-docs/pipeline/pipeline/tools/artellauploader/
+
+# Defines whether this needs Kitsu data to work or not
+kitsu_login: False

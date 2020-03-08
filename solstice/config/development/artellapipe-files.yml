@@ -20,13 +20,25 @@ files:
     class: solstice.files.shading.SolsticeShadingAssetFile
     extensions:
       - ma
+  library_shader:
+    name: Library Shader
+    class: solstice.files.shader.SolsticeShaderFile
+    template: shader
+    extensions:
+      - sshader
+  shader:
+    name: Asset Shader
+    class: solstice.files.shader.SolsticeShaderAssetFile
+    template: shader
+    extensions:
+      - sshader
   shaders:
     name: Shaders
-    class: solstice.files.shader.SolsticeShaderAssetFile
+    class: solstice.files.shader.SolsticeShadersAssetFile
     extensions:
       - sshader
   shadersmapping:
-    name: Shaders Mapping
+    name: Shaders Map
     class: solstice.files.shader.SolsticeShaderMappingAssetFile
     extensions:
       - json
@@ -62,15 +74,21 @@ files:
     template: lightrig
     extensions:
       - ma
-  shader:
-    name: Shader
-    class: solstice.files.shader.SolsticeShaderFile
-    template: shader
-    extensions:
-      - sshader
   master:
     name: Master Layout
     class: solstice.files.masterlayout.SolsticeMasterLayoutSequenceFile
     template: master_layout
     extensions:
       - ma
+  shot_layout:
+    name: Layout Shot File
+    class: solstice.files.shotlayout.SolsticeShotLayoutFile
+    template: shot_layout
+    extensions:
+      - ma
+  shot_layout_anim:
+    name: Layout Shot Animation File
+    class: solstice.files.shotlayout.SolsticeShotAnimationLayoutFile
+    template: shot_layout_anim
+    extensions:
+      - anim

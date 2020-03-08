@@ -4,4 +4,6 @@
 types:
   Shot:
     class: solstice.core.shot.SolsticeShot
-    files: []
+    files:
+      - shot_layout
+      - shot_layout_anim

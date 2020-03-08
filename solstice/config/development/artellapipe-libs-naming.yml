@@ -116,7 +116,7 @@ templates:
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: lightrigs
-  pattern: '{@asset_path}/Assets/lighting/Light_Rigs/__working__/'
+  pattern: '{@project_path}/Assets/lighting/Light Rigs/__working__/'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: alembic
@@ -140,7 +140,7 @@ templates:
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: production_path
-  pattern: '{project_path}/Production'
+  pattern: '{@project_path}/Production'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: master_layout

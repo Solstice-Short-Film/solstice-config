@@ -68,11 +68,27 @@ template_tokens:
   _Serializable_version: '1.0'
   description: Name of the sequence. This must be unique
   name: sequence_name
+- _Serializable_classname: TemplateToken
+  _Serializable_version: '1.0'
+  description: Name of the shot. This must be unique
+  name: shot_name
+- _Serializable_classname: TemplateToken
+  _Serializable_version: '1.0'
+  description: Name of shot layout file
+  name: shot_layout_name
+- _Serializable_classname: TemplateToken
+  _Serializable_version: '1.0'
+  description: Unique ID number of the Artella Project
+  name: project_id_number
+- _Serializable_classname: TemplateToken
+  _Serializable_version: '1.0'
+  description: Unique ID of the Artella Project
+  name: project_id
 templates:
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: asset_path
-  pattern: '{@assets_path}/{asset_type}/{asset_name}'
+  pattern: '{@project_path}/Assets/{asset_type}/{asset_name}'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: rig
@@ -95,16 +111,12 @@ templates:
   pattern: '{@asset_path}/{version_folder}/groom'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
-  name: assets_path
-  pattern: '{project_path}/Assets'
-- _Serializable_classname: Template
-  _Serializable_version: '1.0'
   name: lightrig
   pattern: '{@lightrigs}/{light_rig_name}'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: lightrigs
-  pattern: '{@assets_path}/lighting/Light Rigs/__working__/'
+  pattern: '{@project_path}/Assets/lighting/Light Rigs/__working__/'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: alembic
@@ -116,7 +128,7 @@ templates:
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: shadersmapping
-  pattern: '{@asset_path}/{version_folder}/shading/{asset_name}_SHD.{file_extension}'
+  pattern: '{@shaders}/{asset_name}_MAP.{file_extension}'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: shader
@@ -128,7 +140,7 @@ templates:
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: production_path
-  pattern: '{project_path}/Production'
+  pattern: '{@project_path}/Production'
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: master_layout
@@ -137,6 +149,22 @@ templates:
   _Serializable_version: '1.0'
   name: sequence_path
   pattern: '{@production_path}/{sequence_name}'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: standin
+  pattern: '{@asset_path}/{version_folder}/model/{asset_name}.{file_extension}'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: shot_layout
+  pattern: '{@project_path}/Production/{sequence_name}/{shot_name}/{version_folder}/rough/{shot_name}_ROUGH.{file_extension}'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: shot_layout_anim
+  pattern: '{@project_path}/Production/{sequence_name}/{shot_name}/{version_folder}/rough/{shot_name}_ANIM.{file_extension}'
+- _Serializable_classname: Template
+  _Serializable_version: '1.0'
+  name: project_path
+  pattern: /Artella/_art/production/{project_id_number}/{project_id}
 tokens:
 - _Serializable_classname: Token
   _Serializable_version: '1.0'
