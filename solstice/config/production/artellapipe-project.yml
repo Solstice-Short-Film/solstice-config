@@ -1,6 +1,6 @@
 # Configuration for Solstice Project
 
-# Define configuration variables for Solstice
+# Defines Artella project ID number
 id_number: "2"
 
 # Defines the Artella Project ID
@@ -26,10 +26,10 @@ extensions:
   - ma
   - abc
   - ass
-  -
+
 default_extension: ma
 
-# Defines list of departments that
+# Defines list of departments
 departments:
   - Modeling
   - Shading
