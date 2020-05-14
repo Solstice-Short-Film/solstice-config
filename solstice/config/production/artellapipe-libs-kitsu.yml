@@ -11,3 +11,6 @@ gazu_api: "https://solstice-short-film.cg-wire.com/api"
 
 # Defines custom attribute to use to identify Kitsu assets
 custom_id_attribute: "id"
+
+# Defines custom attribute to use to identify Kitsu published assets
+custom_is_published_attribute: "published"
