@@ -164,7 +164,7 @@ templates:
 - _Serializable_classname: Template
   _Serializable_version: '1.0'
   name: project_path
-  pattern: /Artella/_art/production/{project_id_number}/{project_id}
+  pattern: /_art/production/{project_id_number}/{project_id}
 tokens:
 - _Serializable_classname: Token
   _Serializable_version: '1.0'
