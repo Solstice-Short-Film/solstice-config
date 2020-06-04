@@ -63,6 +63,7 @@ libs:
   - alembic
   - arnold
   - ffmpeg
+  - picker
 
 # Defines available tools
 tools:
